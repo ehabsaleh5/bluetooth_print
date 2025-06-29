@@ -21,9 +21,7 @@ A new flutter plugin project.
 
   # 引入Classes文件夹下所有的*.a库
   s.frameworks = ["SystemConfiguration", "CoreTelephony","WebKit"]
-  if ENV['PLATFORM_NAME'] != 'iphonesimulator'
   s.vendored_libraries = '**/*.a'
-  end
 
 
 
