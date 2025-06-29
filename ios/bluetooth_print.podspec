@@ -25,7 +25,6 @@ A new flutter plugin project.
   s.vendored_libraries = []  # Empty array for simulator builds
   else
   s.vendored_libraries = '**/*.a'  # Include all .a files for device builds
-  end
 
 
 
