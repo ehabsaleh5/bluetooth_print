@@ -21,11 +21,13 @@ A new flutter plugin project.
 
   # 引入Classes文件夹下所有的*.a库
   s.frameworks = ["SystemConfiguration", "CoreTelephony","WebKit"]
-if ENV['PLATFORM_NAME'] == 'iphonesimulator'
-  s.vendored_libraries = []
-else
-  s.vendored_libraries = '**/*.a'
-end
+  if ENV['PLATFORM_NAME'] == 'iphonesimulator'
+  s.vendored_libraries = []  # Empty array for simulator builds
+  else
+  s.vendored_libraries = '**/*.a'  # Include all .a files for device builds
+  end
+
+
 
   # Flutter.framework does not contain a i386 slice. Only x86_64 simulators are supported.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64' }
